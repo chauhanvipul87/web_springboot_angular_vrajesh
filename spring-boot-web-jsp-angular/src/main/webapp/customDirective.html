@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    	
+	</head>
+
+	<body ng-app="myApp" ng-controller="myCtrl">
+		Attribute:<div class="" my-first-directive>
+		<br>
+		</div>
+		Tag:<my-first-directive></my-first-directive>
+		<script>
+			var application = angular.module('myApp',[]);
+			
+			application.directive('myFirstDirective', function(){
+				function linkFunction(scope, elem, attrs){
+					elem.bind('click', function(){
+						alert(elem[0].innerHTML);
+					});
+				}
+				return {
+					template : 'hello world',
+					restrict: 'A',
+					link: linkFunction
+				};
+			});
+			
+			application.controller('myCtrl', function(){
+				
+			});
+			
+		</script>
+	</body>
+</html>

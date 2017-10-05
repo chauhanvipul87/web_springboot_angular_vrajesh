@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myLoopApp" ng-controller="myLoopCtrl">
+<p ng-repeat = "i in myRange">
+	{{i}}
+</p>
+<br>Another loop
+<p ng-repeat = "i in range track by $index">
+	Testing..
+</p>
+</div>
+
+<script>
+var app = angular.module('myLoopApp', []);
+app.controller('myLoopCtrl', function($scope) {
+    var myRange = [1,2,3,4,5];
+    $scope.myRange = myRange;
+    
+    var range = new Array(100);
+    $scope.range = range;
+});
+</script>
+
+</body>
+</html>

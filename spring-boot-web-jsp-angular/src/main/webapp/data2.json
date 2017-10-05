@@ -1,0 +1,19 @@
+{
+	"records" : [
+		{
+			"Name" : "vrajesh",
+			"Age" : "35",
+			"Fav_color" : "red"
+		},
+		{
+			"Name" : "Amit",
+			"Age" : "30",
+			"Fav_color" : "yellow"
+		},
+		{
+			"Name" : "Dhruvin",
+			"Age" : "12",
+			"Fav_color" : "blue"
+		}
+	]
+}

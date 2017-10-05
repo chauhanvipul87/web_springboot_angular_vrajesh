@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="httpRequestController.js"></script>
+ 	</head>
+
+	<body ng-app="myHttpRequestApp">
+		<input type="text" ng-model="searchBox">
+		<div ng-controller="httpRequestCntrl">
+			<ul>
+				<li ng-repeat="person in persons | filter : searchBox">
+					{{ person.Name + " : " + person.Age}}
+				</li>
+			</ul>
+		</div>
+
+	</body>
+</html>

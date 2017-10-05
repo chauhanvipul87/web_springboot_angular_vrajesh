@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<input type="text" ng-keyup="manageEnter()" ng-model="task">
+</body>
+
+<script>
+var application = angular.module('myApp',[]);
+application.controller('myCtrl', function($scope){
+	$scope.myArray = [];
+	
+	$scope.manageEnter = function() {
+		
+		if(event.which == 13) {
+			alert($scope.task);
+			$scope.myArray.push($scope.task);
+			console.log($scope.myArray);
+			$scope.task = '';
+		}
+	};
+});
+</script>
+</html>

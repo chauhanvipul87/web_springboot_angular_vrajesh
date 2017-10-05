@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myScope2App" ng-controller="myScope2Ctrl">
+<input ng-model="name.property">
+
+<p ng-repeat = "i in [100,200]">
+<input ng-model="name.property">
+	{{i}}
+	<br>Your Name:{{name.property}}
+</p>
+Outside: {{i}}
+<br>Your Name:{{name.property}}
+</div>
+
+<script>
+var app = angular.module('myScope2App', []);
+app.controller('myScope2Ctrl', function($scope) {
+   
+});
+</script>
+</body>
+</html>

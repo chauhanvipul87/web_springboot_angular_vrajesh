@@ -1,0 +1,17 @@
+<!doctype html>
+<html >
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	</head>
+	
+	<body ng-app="myIncludeApp">
+		<div ng-include="'header.html'"></div>
+		<br>
+		<ng-include src="'header.html'"></ng-include>
+		<br>
+		<div ng-include src="'header.html'"></div>
+		<br>
+		This is body.
+	</body>
+</html>

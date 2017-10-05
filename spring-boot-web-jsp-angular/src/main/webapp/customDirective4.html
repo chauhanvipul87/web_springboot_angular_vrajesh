@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    	
+	</head>
+
+	<body ng-app="myApp" ng-controller="myCtrl">
+		<p>First variable 'name' : {{name}}</p>
+		<p>Second variable 'age' : {{age}}</p>
+		<input type="button" value="From Controller" ng-click="alertTheName()">
+		
+		<div  my-first-directive name ="{{name}}" age="age" func="alertTheName()">
+		</div>
+		
+		
+		<script>
+			var application = angular.module('myApp',[]);
+			
+			application.directive('myFirstDirective', function(){
+				
+				return {
+					template : ['<p>Value of name in directive : {{name}}</p>',
+							   '<p>Enter new name:<input type="text" ng-model="name"></p>',
+							   '<p>Value of age in directive : {{age}}</p>',
+							   '<p>Enter new age:<input type="text" ng-model="age"></p>',
+							   '<p><input type="button" value="Alert from directive" ng-click="func()"></p>'],
+					restrict: 'EA',
+					scope: {
+						name : '@',
+						age : '=',
+						func: '&'
+					}
+				};
+			});
+			
+			application.controller('myCtrl', function($scope){
+				$scope.name = "codedamn";
+				$scope.age = 100;
+				$scope.alertTheName = function(){
+					alert($scope.name);
+				};
+			});
+			
+		</script>
+	</body>
+</html>

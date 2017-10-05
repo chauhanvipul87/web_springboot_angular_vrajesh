@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="showDirective.js"></script>
+<body ng-app="myShowDirectiveApp" ng-controller="myShowDirectiveCtrl">
+
+<button ng-click="toggle()">Toggle Message</button>
+<div class="message" ng-show="show == 'one'">
+	This is message1.	
+</div>
+<div class="message" ng-show="show == 'two'">
+	This is message2.	
+</div>
+</body>
+</html>
